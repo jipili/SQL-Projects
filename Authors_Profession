@@ -1,0 +1,32 @@
+/* Create table about the people and what they do here */
+CREATE table authors (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    author_name TEXT,
+    book_name TEXT);
+INSERT INTO authors (id, author_name, book_name) VALUES (1, "George Orwell", "1984");
+INSERT INTO authors (id, author_name, book_name) VALUES (2, "George Orwell", "Animal Farm");
+INSERT INTO authors (id, author_name, book_name) VALUES (3, "Alistair Croll", "Lean Analytics");
+INSERT INTO authors (id, author_name, book_name) VALUES (4, "Al Sweigart", "Automate the Boring Stuff Using Python");
+INSERT INTO authors (id, author_name, book_name) VALUES (5, "Dan Norman", "The Design of Everyday Things");
+INSERT INTO authors (id, author_name, book_name) VALUES (6, "Dan Norman", "Emotional Design");
+INSERT INTO authors (id, author_name, book_name) VALUES (7, "Raphael Waksberg", "Someone Who Will Love You in All Your Damaged Glory");
+INSERT INTO authors (id, author_name, book_name) VALUES (8, "Clayton Christensen", "The Innovator's Dilemma");
+INSERT INTO authors (id, author_name, book_name) VALUES (9, "John Carreyrou", "Bad Blood");
+INSERT INTO authors (id, author_name, book_name) VALUES (10, "James Clear", "Atomic Habits");
+
+CREATE table authors_profession (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    authors_id INTEGER,
+    profession TEXT);
+INSERT INTO authors_profession (authors_id, profession) VALUES (1, "English Journalist");
+INSERT INTO authors_profession (authors_id, profession) VALUES (1, "English Journalist");
+INSERT INTO authors_profession (authors_id, profession) VALUES (2, "Entrepreneur");
+INSERT INTO authors_profession (authors_id, profession) VALUES (3, "Programmer");
+INSERT INTO authors_profession (authors_id, profession) VALUES (4, "User Experience Designer");
+INSERT INTO authors_profession (authors_id, profession) VALUES (5, "Scriptwriter");
+INSERT INTO authors_profession (authors_id, profession) VALUES (6, "Professor");
+INSERT INTO authors_profession (authors_id, profession) VALUES (7, "Journalist");
+
+SELECT authors.author_name,authors_profession.profession from authors
+JOIN authors_profession
+ON authors_profession.id=authors.id
